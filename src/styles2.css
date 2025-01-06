@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --echolog-color: #2ebfff;
+    --echolog-background: #000000;
+    --echolog-hover: #1c1c1e;
+    --echolog-text: #ffffff;
+    --echolog-text-secondary: rgba(235,235,245,0.6);
+    background-color: var(--echolog-background);
+}
+
+.box {
+    min-width: fit-content;
+    margin-top: 25vh;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 20px;
+    background-color: var(--echolog-hover);
+    border-radius: 20px;
+}
+
+.material-symbols-outlined {
+    color: var(--echolog-text);
+}
+
+.centerImage {
+    text-align: center;
+}
+
+.textField {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-background);
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--echolog-text-secondary);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--echolog-background) inset !important;
+    -webkit-text-fill-color: var(--echolog-text);
+}
+
+input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    color: var(--echolog-text);
+    background-color: var(--echolog-background);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.createLink {
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: var(--echolog-color);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.buttonContainer {
+    margin-top: 20px;
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
+.button {
+    width: 100%;
+    height: 30px; 
+    font-size: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    background-color: var(--echolog-hover);
+    color: var(--echolog-text);
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text);
+}
+
+.errorList {
+	margin:25px 0px;
+}
+
+.error {
+	overflow: hidden;
+	padding: 5px;
+	border: 2px solid red;
+	border-radius: 30px;
+	font-size: 13px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+	color: red;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.con {
+	width: 100%;
+	text-align: center;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1024px){
+    /* Styles for mobile */
+
+    .box {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .buttonContainer {
+        margin-top: 20px;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .button {
+        width: 100%;
+        height: 30px; 
+        font-size: 20px;
+        font-family: "Bangers", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        border: none;
+        background-color: var(--echolog-hover);
+        color: var(--echolog-text);
+        border-radius: 30px;
+    }
+
+    .error {
+        width: 90%;
+        margin-left: 5%;
+    }
+    
+}
+
+@media only screen and (max-height: 900px){
+    /* Styles for mobile */
+
+    .box {
+        margin-top: 10vh;
+    }
+    
+}

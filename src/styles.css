@@ -1,0 +1,1225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --echolog-color: #2ebfff;
+    --echolog-background: #000000;
+    --echolog-hover: #1c1c1e;
+    --echolog-text: #ffffff;
+    --echolog-text-secondary: rgba(235,235,245,0.6);
+    background-color: var(--echolog-background);
+
+    display: flex;
+    height: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.material-symbols-outlined {
+    color: var(--echolog-text);
+}
+
+label {
+    display: inline-block;
+    margin-top: 2%;
+    color: var(--echolog-text);
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 1%;
+}
+
+#cCounter {
+    text-align: right;
+    background: transparent;
+}
+
+#cCounter2 {
+    text-align: right;
+    background: transparent;
+}
+
+#cCounter3 {
+    text-align: right;
+    background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--echolog-background) inset !important;
+    -webkit-text-fill-color: var(--echolog-text-secondary);
+}
+
+.bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    word-break: break-word;
+    white-space: normal;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text-secondary);
+}
+
+a {
+    text-decoration: none;
+    word-break: break-word;
+}
+
+/* Errors CSS */
+.errorList {
+	margin:25px 0px;
+}
+
+.error {
+	overflow: hidden;
+	padding: 5px;
+	border: 2px solid red;
+	border-radius: 30%;
+	font-size: 13px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+	color: red;
+}
+
+.con {
+	width: 100%;
+	text-align: center;
+}
+
+/* SIDEBAR */
+.sidebar {
+    border-right: 1px solid var(--echolog-hover);
+    flex: 0.2;
+    max-width: 260px;
+    min-width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--echolog-text);
+}
+
+.sidebarOption .material-symbols-outlined {
+    padding: 20px;
+    text-decoration: none;
+}
+
+.sidebarOption h2 {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.active {
+    background-color: var(--echolog-hover);
+    text-decoration: none;
+    border-radius: 30px;
+    color: var(--echolog-color);
+    transition: color 100ms ease-out;
+}
+
+.active .material-symbols-outlined {
+    padding: 20px;
+    text-decoration: none;
+    color: var(--echolog-color);
+}
+
+.sidebarOption:hover .material-symbols-outlined {
+    padding: 20px;
+    text-decoration: none;
+    color: var(--echolog-color);
+}
+
+.sidebarOption:hover {
+    background-color: var(--echolog-hover);
+    text-decoration: none;
+    border-radius: 30px;
+    color: var(--echolog-color);
+    transition: color 100ms ease-out;
+}
+
+.sidebarPost {
+    width: 100%;
+    font-size: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-color);
+    border: none;
+    color: var(--echolog-text);
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+/* SEARCH */
+.searchBar {
+    height: 6%;
+    display: flex;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.searchBar .material-symbols-outlined {
+    color: var(--echolog-text);
+}
+
+.searchBar input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text-secondary);
+    background-color: var(--echolog-hover);
+}
+
+.user-result-box {
+    width: 100%;
+    height: 10%;
+    margin-top: 2%;
+}
+
+.chatResult {
+    display: grid;
+    grid-gap: 0.2em;
+    grid-template-columns: min-content auto;
+    grid-gap: 3%;
+    padding: 0.2em;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.img-user-message {
+    height: 38px;
+	width: 38px;
+	border-radius: 50px;
+}
+
+.chatTag {
+    display: grid;
+    grid-gap: 0.1em;
+    margin-right: 2%;
+    grid-template-rows: 50% 50%;
+}
+
+.chatTagName {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text);
+}
+
+.chatTag p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.profileResult {
+    position: absolute;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 5%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.resultTag {
+    margin-top: 2%;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text);
+}
+
+.resultPFP {
+    margin-left: 5%;
+    width:38px;
+    height: 38px;
+    border-radius: 50px;
+}
+
+/* FEED */
+.feed {
+    flex: 0.5;
+    max-width: 650;
+    border-right: 1px solid var(--echolog-hover);
+}
+
+.feedInner {
+    min-width: min-content;
+    height: 7%;
+    border-bottom: 1px solid var(--echolog-hover);
+}
+
+.feedHeader {
+    position: sticky;
+    top: 0px;
+    color: var(--echolog-text);
+    z-index: 100;
+    padding: 15px 20px;
+}
+
+.feedHeader h2 {
+    font-size: 20px;
+    margin-right: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* RECOMMEND */
+.recommend {
+    flex: 0.3;
+    max-width: 390;
+}
+
+.followRec {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: var(--echolog-hover);
+    border-radius: 20px;
+}
+
+.followRec h2 {
+    font-size: 20px;
+    color: var(--echolog-text);
+    margin-right: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grid-follow {
+	margin-top: 10px;
+	display: grid;
+    grid-gap: 2%;
+	grid-template-columns: min-content 40% auto;
+}
+
+.img-follow {
+    height: 38px;
+	width: 38px;
+	border-radius: 50px;
+}
+
+.follows-you {
+    font-size: 13px;
+	font-weight: 500;
+    font-family: "Nanum Gothic", sans-serif;
+    font-style: normal;
+	color: var(--echolog-color);
+	border: 1px solid var(--echolog-color);
+    border-radius: 28px 28px 28px 28px;
+	-moz-border-radius: 28px 28px 28px 28px;
+	-webkit-border-radius: 28px 28px 28px 28px;
+	padding: 3px;
+	border-radius: 6px;
+}
+
+.follow-btn {
+    display: inline-block;
+	color: var(--echolog-color);
+	height: 42px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0.375rem 1.2rem;
+	font-size: 16px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-style: normal;
+	line-height: 1.5;
+	border-radius: 28px 28px 28px 28px;
+	-moz-border-radius: 28px 28px 28px 28px;
+	-webkit-border-radius: 28px 28px 28px 28px;
+	border: 1px solid var(--echolog-color);
+	cursor: pointer;
+	margin-top: 15px;
+	background: transparent;
+	font-weight: 700;
+}
+
+/* FOOTER */
+.footer {
+    margin-top:3%;
+    margin-left: 8%;
+}
+
+.footer p {
+    margin-top:2%;
+    margin-left: 4%;
+}
+
+.footer h2 {
+    color: var(--echolog-text);
+    font-size: 20px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* CENTER */
+.followingPosts {
+    position: relative;
+    overflow-y: scroll;
+    height: 84%; 
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.followingPosts input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-hover);
+    color: var(--echolog-text);
+}
+
+.followingPosts .textField {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 10px;
+    margin-top: 1%;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--echolog-text-secondary);
+}
+
+.followingPosts::-webkit-scrollbar {
+    display: none;
+}
+
+/* POSTS */
+.feed-post-box {
+    margin-top: 15px;
+	margin-left: 0%;
+}
+
+.echoed-name {
+    font-weight: 700;
+	font-size: 13px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-style: normal;
+	color: rgb(102, 117, 130);
+	margin-left: 40px;
+}
+
+.echoed-name-inner {
+    font-size: 17px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+	margin-right: 5px;
+}
+
+.grid-post {
+    display: grid;
+	grid-template-columns: min-content auto;
+    grid-gap: 1%;
+	margin: 1%;
+    padding: 1%;
+    background-color: var(--echolog-hover);
+    border-radius: 10px;
+}
+
+.img-user-post {
+    height: 38px;
+	width: 38px;
+	border-radius: 50px;
+}
+
+.username-echolog {
+    color: var(--echolog-text-secondary);
+	font-size: 14px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.post-links {
+    text-decoration: none;
+    white-space-collapse: preserve-breaks;
+    white-space: pre-wrap;
+}
+
+.hash-post {
+    color: #1da1f2;
+	font-weight: 500;
+    font-family: "Nanum Gothic", sans-serif;
+    font-style: normal;
+	position:relative ;z-index: 40;
+}
+
+.marTop-post {
+    margin-top: 10px;
+}
+
+.img-post-width {
+    max-width: 95%;
+	border-radius: 10px;
+}
+
+.comment-post {
+	border-radius: 15px;
+	border: 3px solid var(--echolog-text);
+	color: black;
+	text-decoration: none;
+}
+
+.comment-post:hover {
+	color: #000000;
+	background-color: var(--echolog-text);
+	text-decoration: none;
+	transition: .2s;
+	
+} 
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.img-post-echo {
+    height: 200.19px;
+	width: 320px;
+	border-radius: 10px;
+}
+
+.grid-stats {
+    display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	position: relative;
+	z-index: 20;
+}
+
+.grid-box-stat {
+	padding-top: 8px;
+}
+
+.hover-stat {
+    padding: 5px;
+	border-radius: 50%;
+	text-align: center;
+}   
+
+.hover-stat-comment:hover {
+    background-color: var(--echolog-background);
+	color: var(--echolog-color);
+}
+
+.hover-stat-echo:hover {
+    background-color: var(--echolog-background);
+	color: var(--echolog-color);
+}
+
+.hover-stat-like:hover {
+    background-color: var(--echolog-background);
+	color: var(--echolog-color);
+}
+
+.mar-counter {
+    margin-left: 2px;
+    display: inline-block;
+    font-size: 50%;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.echoed {
+    color: var(--echolog-color);
+}
+
+.unlike-btn {
+    color: var(--echolog-color);
+}
+
+.unlike-symbol {
+    color: var(--echolog-color);
+}
+
+.username {
+    margin-top: -2%;
+	font-size: 15px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+	color: var(--echolog-text-secondary);
+}
+
+/* EXPLORE */
+.explore-post-box {
+    display: inline-block;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.explorePosts {
+    position: relative;
+    overflow-y: scroll;
+    height: 84%;
+    width: 100%;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+.grid-explore-outer {
+    column-count: 2;
+    column-gap: 1px;
+}
+
+.grid-explore {
+    display: grid;
+	grid-template-rows: min-content min-content;
+	margin: 1%;
+    padding: 1%;
+    background-color: var(--echolog-hover);
+    border-radius: 10px;
+}
+
+.grid-explore-top {
+    display: grid;
+	grid-template-columns: min-content auto;
+    grid-gap: 1%;
+	margin: 1%;
+}
+
+.explorePosts::-webkit-scrollbar {
+    display: none;
+}
+
+/* MESSAGES */
+.messageDisplay {
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    height: 93%;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+.sendMessagePage input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-hover);
+    color: var(--echolog-text);
+}
+
+.sendMessagePage .textField {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 10px;
+    margin-top: 1%;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--echolog-text-secondary);
+}
+
+.toMessage {
+    display: grid;
+    grid-gap: 0.2em;
+    grid-template-columns: 10% fit-content(90%) auto;
+    margin-right: 30%;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.toMessage a {
+    display: flex;
+}
+
+.fromMessage a {
+    display: flex;
+}
+
+.toMessage a img {
+    align-self: end;
+}
+
+.fromMessage a img {
+    align-self: end;
+}
+
+.toMessage p {
+    padding: 0.3em;
+    background-color: var(--echolog-hover);
+    border-radius: 10px;
+}
+
+.fromMessage {
+    display: grid;
+    grid-gap: 0.2em;
+    grid-template-columns: auto fit-content(90%) 10%;
+    margin-left: 30%;
+    margin-right: 1%;
+    margin-top: 2%;
+}
+
+.fromMessage p {
+    padding: 0.3em;
+    border-radius: 10px;
+    background-color: var(--echolog-hover);
+}
+
+/* PROFILE */
+.profile {
+    flex: 0.5;
+    border-right: 1px solid var(--echolog-hover);
+}
+
+.profileHeader {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 75% 25%;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    height: 20%;
+    border-bottom: 1px solid var(--echolog-hover);
+}
+
+.profilePosts {
+    position: relative;
+    overflow-y: scroll;
+    height: 80%; 
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.profile_pfp {
+    position: relative;
+    margin-left: 5%;
+    margin-top: 5%;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profileRight {
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.profileStats {
+    position: relative;
+    display: grid;
+    grid-gap: 2%;
+    grid-template-rows: 30% 30% 30%;
+    margin-right: 5%;
+}
+
+.postsCounter {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--echolog-text-secondary);
+}
+
+.postsWord {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--echolog-text-secondary);
+}
+
+.followersCounter {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.followersWord {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.followingCounter {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.followingWord {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.profileStatLinks {
+    text-decoration: none;
+    color: var(--echolog-text-secondary);
+}
+
+.messageButton {
+    position: relative;
+    margin-right: 1%;
+    text-align: right;
+}
+
+.message-btn {
+    position: relative;
+    display: inline-block;
+	color: var(--echolog-color);
+    width: fit-content;
+	text-align: center;
+	padding-right: 1.2rem;
+    padding-left: 1.2rem;
+	font-size: 14px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+	line-height: 1;
+	border-radius: 28px;
+	-moz-border-radius: 28px;
+	-webkit-border-radius: 28px;
+	border: 1px solid var(--echolog-color);
+	cursor: pointer;
+    margin-top: 3%;
+	background: transparent;
+}
+
+textarea {
+    white-space: pre-wrap;
+}
+
+.profileBio {
+    color: var(--echolog-text-secondary);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    white-space-collapse: preserve-breaks;
+    white-space: pre-line;
+    hyphens: auto;
+}
+
+.profileNameTag {
+    margin-left: 5%;
+    color: var(--echolog-text);
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.postsStat {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    text-align: right;
+}
+
+.followersStat {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    text-align: right;
+}
+
+.followingStat {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    text-align: right;
+}
+
+/* CREATE POST */
+.createPost {
+    flex: 0.5;
+    border-right: 1px solid var(--echolog-hover);
+    position: relative;
+    min-height:90%;
+    max-height: 90%; 
+}
+
+.createPostInner {
+    display: grid;
+    grid-template-columns: min-content auto;
+    margin-top: 1%;
+}
+
+.createPostRight {
+    display: grid;
+    grid-template-rows: auto min-content;
+}
+
+.createPost .textField {
+    display: flex;
+    width: 98%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 20px;
+    margin-left: 1%;
+    color: var(--echolog-text-secondary);
+}
+
+.createPost textarea {
+    border: none;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text-secondary);
+}
+
+.createPost input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-hover);
+    color: var(--echolog-text);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.createPost .imageUploadButton {
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 80%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.profile {
+
+}
+
+/* EDIT ACCOUNT */
+.edit-account {
+    flex: 0.5;
+    border-right: 1px solid var(--echolog-hover);
+    position: relative;
+    min-height:90%;
+    max-height: 90%; 
+}
+
+.edit-Account .textField {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 10px;
+    margin-top: 1%;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--echolog-text-secondary);
+}
+
+.edit-Account textarea {
+    border: none;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background-color: var(--echolog-hover);
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--echolog-text-secondary);
+}
+
+.edit-Account input {
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-hover);
+    color: var(--echolog-text);
+}
+
+.imageUploadButton {
+    margin-left: 10%;
+    width: 80%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.imageUploadButton input {
+    width: 80%;
+}
+
+.customButton {
+    display: inline-block;
+    padding: 1%;
+	border: 1px solid var(--echolog-color);
+    width: 123px;
+    height: 29px;
+    margin-left: revert-layer;
+    margin-top: revert-layer;
+    text-align: center;
+    color: var(--echolog-color);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--echolog-background);
+}
+
+.editImageButton {
+    width: 80%;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+}
+
+.editName {
+
+}
+
+.editBio {
+
+}
+
+.editImage {
+    
+}
+
+/* MOBILE BAR */
+.mobilebar {
+    width: 95%;
+    height: 6%;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 100% 5% var(--echolog-background);
+    background-color: var(--echolog-background);
+    z-index: 1500;
+}
+
+.mobilebarOption {
+    width: 20%;
+}
+
+.mobilebar a {
+    text-decoration: none;
+}
+
+.mobilebarOption .material-symbols-outlined {
+    padding: 10px;
+    text-decoration: none;
+    align-items: center;
+    color: var(--echolog-text);
+}
+
+.mobilePost {
+    position: fixed;
+    bottom: 7%;
+    right: 2%;
+    width: 48px;
+    height: 48px;
+    z-index: 1500;
+}
+
+.mobilePostButton {
+    background-color: var(--echolog-color);
+    border: none;
+    color: var(--echolog-text);
+    border-radius: 15px;
+}
+.mobilePostButton .material-symbols-outlined {
+    padding: 8px;
+    font-size: 32px;
+    text-decoration: none;
+    align-items: center;
+    color: var(--echolog-text);
+}
+
+/* Media queries */
+@media only screen and (max-width: 1024px){
+    /* Styles for mobile */
+    .sidebar {
+        display: none; /* Hide sidebar on mobile */
+    }
+    .feed {
+        flex: 1; /* Full width on mobile */
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .recommend {
+        display: none; /* Hide recommend on mobile */
+    }
+
+    .mobilebar {
+        display: flex; /* show mobile bar */
+    }
+
+    .followingPosts {
+        height:79%;
+    }
+
+    .explorePosts {
+        height:79%;
+    }
+
+    .profilePosts {
+        height:74%;
+    }
+
+    .img-user-post {
+        height: 24px;
+        width: 24px;
+    }
+
+    .edit-account {
+        flex: 1;
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .createPost {
+        flex: 1;
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .profile {
+        flex: 1;
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .profile_pfp {
+        width:70px;
+        height: 70px;
+    }
+
+    .messageDisplay {
+        height: 87%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .mobilePost {
+        display: none;
+    }
+}
+@media only screen and (max-width: 355px){
+    /* Styles for mobile */
+    .profile_pfp {
+        width:60px;
+        height: 60px;
+    }
+
+    .profileRight {
+        grid-template-columns: 60% auto;
+    }
+
+    .postsCounter {
+        font-size: 12px;
+    }
+    
+    .postsWord {
+        font-size: 12px;
+    }
+    
+    .followersCounter {
+        font-size: 12px;
+    }
+    
+    .followersWord {
+        font-size: 12px;
+    }
+    
+    .followingCounter {
+        font-size: 12px;
+    }
+    
+    .followingWord {
+        font-size: 12px;
+    }
+
+    .profileBio {
+        font-size: 12px;
+    }
+
+    .message-btn {
+        font-size: 12px;
+    }
+
+}
